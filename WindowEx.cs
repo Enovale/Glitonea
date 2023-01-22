@@ -34,6 +34,12 @@ namespace Glitonea
 
         protected void CenterOwner()
         {
+            if (Owner is null)
+            {
+                CenterScreen();
+                return;
+            }
+
             var ownerPosition = ((Window)Owner)!.Position;
             var ownerSize = Owner.Bounds.Size;
 
